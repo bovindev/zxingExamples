@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "31.0.0"
+
+    defaultConfig {
+        applicationId "com.google.zxing.client.android"
+        minSdkVersion 28
+        targetSdkVersion 30
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':zxing')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+}
